@@ -29,7 +29,11 @@ function ContentRowTop() {
 
       const genresData = await genresRes.json();
 
-      setGenres(genresData);
+      if (Array.isArray(genresData.data)) {
+        setGenres(genresData.data);
+      } else {
+        console.error('Error al obtener los géneros', genresData);
+      }
     }
 
     fetchData();
@@ -107,11 +111,9 @@ function ContentRowTop() {
               <div className="card-body">
                 <div className="row">
                   {genres.map((genre) => (
-                    <div className="col-lg-6 mb-4">
+                    <div className="col-lg-6 mb-4" key={genre.id}>
                       <div className="card bg-dark text-white shadow">
-                        <div className="card-body" key={genre.id}>
-                          {genre.name}
-                        </div>
+                        <div className="card-body">{genre.name}</div>
                       </div>
                     </div>
                   ))}
