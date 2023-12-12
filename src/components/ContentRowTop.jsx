@@ -5,23 +5,17 @@ import ContentRowMovies from './ContentRowMovies';
 
 const metrics = [
   {
-    title: 'Hello World',
+    title: 'Games en BD',
     borderColor: 'border-left-primary',
-    value: 21,
-    icon: 'fa-film',
+    value: 0,
+    icon: 'fa-solid fa-gamepad',
   },
   {
-    title: 'Un elixir',
+    title: 'Cantidad de usuarios',
     borderColor: 'border-left-success',
-    value: 79,
-    icon: 'fa-award',
-  },
-  {
-    title: 'Actors quantity',
-    borderColor: 'border-left-warning',
-    value: 49,
-    icon: 'fa-user',
-  },
+    value:0,
+    icon: 'fa-solid fa-user',
+  }
 ];
 
 function ContentRowTop() {
@@ -70,14 +64,14 @@ function ContentRowTop() {
             <div className="card shadow mb-4">
               <div className="card-header py-3">
                 <h5 className="m-0 font-weight-bold text-gray-800">
-                  Last movie in Data Base
+                  
                 </h5>
               </div>
               <div className="card-body">
                 <div className="text-center">
                   <img
                     className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                    src={Mandalorian}
+                    src="http://localhost:3000/img/Alpaca-celu.svg"
                     alt="Star Wars - Mandalorian"
                   />
                 </div>
@@ -95,7 +89,7 @@ function ContentRowTop() {
                   rel="nofollow"
                   href="/"
                 >
-                  View movie detail
+                 
                 </a>
               </div>
             </div>
