@@ -3,27 +3,6 @@ import { useEffect, useState } from 'react';
 import Mandalorian from '../assets/images/mandalorian.jpg';
 import ContentRowMovies from './ContentRowMovies';
 
-const metrics = [
-  {
-    title: 'Hello World',
-    borderColor: 'border-left-primary',
-    value: 21,
-    icon: 'fa-film',
-  },
-  {
-    title: 'Un elixir',
-    borderColor: 'border-left-success',
-    value: 79,
-    icon: 'fa-award',
-  },
-  {
-    title: 'Actors quantity',
-    borderColor: 'border-left-warning',
-    value: 49,
-    icon: 'fa-user',
-  },
-];
-
 function ContentRowTop() {
   const [genres, setGenres] = useState([]);
 
@@ -55,15 +34,7 @@ function ContentRowTop() {
 
         {/* Content Row Movies*/}
         <div className="row">
-          {metrics.map((metric, index) => (
-            <ContentRowMovies
-              title={metric.title}
-              borderColor={metric.borderColor}
-              value={metric.value}
-              icon={metric.icon}
-              key={index}
-            />
-          ))}
+          <ContentRowMovies />
         </div>
         {/* End movies in Data Base */}
 
