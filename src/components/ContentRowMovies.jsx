@@ -2,23 +2,29 @@
 import { useEffect, useState } from 'react';
 
 function ContentRowMovies() {
-  const [total, setTotal] = useState(0);
+  const [totalGames, setTotalGames] = useState(0);
+  const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
     let isMounted = true;
 
     async function fetchData() {
       try {
-        const response = await fetch('http://localhost:3000/api/videogames');
+        const responseGames = await fetch(
+          'http://localhost:3000/api/videogames',
+        );
+        const responseUsers = await fetch('http://localhost:3000/api/users');
 
-        if (!response.ok) {
+        if (!responseGames.ok || !responseUsers.ok) {
           throw new Error('Error al obtener los datos');
         }
 
-        const data = await response.json();
+        const { data: gamesData } = await responseGames.json();
+        const { data: usersData } = await responseUsers.json();
 
         if (isMounted) {
-          setTotal(data.products.length);
+          setTotalGames(gamesData.length);
+          setTotalUsers(usersData.length);
         }
       } catch (error) {
         console.log(error);
@@ -42,7 +48,7 @@ function ContentRowMovies() {
                   Games
                 </div>
                 <div className="h5 mb-0 font-weight-bold text-gray-800">
-                  {total}
+                  {totalGames}
                 </div>
               </div>
               <div className="col-auto">
@@ -61,7 +67,7 @@ function ContentRowMovies() {
                   Users
                 </div>
                 <div className="h5 mb-0 font-weight-bold text-gray-800">
-                  {total}
+                  {totalUsers}
                 </div>
               </div>
               <div className="col-auto">

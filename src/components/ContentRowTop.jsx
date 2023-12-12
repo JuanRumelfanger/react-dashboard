@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { useEffect, useState } from 'react';
-import Mandalorian from '../assets/images/mandalorian.jpg';
 import ContentRowMovies from './ContentRowMovies';
 
 function ContentRowTop() {
@@ -44,15 +43,13 @@ function ContentRowTop() {
           <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
               <div className="card-header py-3">
-                <h5 className="m-0 font-weight-bold text-gray-800">
-                  Last movie in Data Base
-                </h5>
+                <h5 className="m-0 font-weight-bold text-gray-800"></h5>
               </div>
               <div className="card-body">
                 <div className="text-center">
                   <img
                     className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                    src={Mandalorian}
+                    src="http://localhost:3000/img/Alpaca-celu.svg"
                     alt="Star Wars - Mandalorian"
                   />
                 </div>
@@ -69,9 +66,7 @@ function ContentRowTop() {
                   target="_blank"
                   rel="nofollow"
                   href="/"
-                >
-                  View movie detail
-                </a>
+                ></a>
               </div>
             </div>
           </div>
